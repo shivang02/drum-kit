@@ -52,6 +52,7 @@ class DrumPad extends Component {
       audioObj.currentTime =0;
       audioObj.play()
       setTimeout(audioObj.play(),100);
+      this.props.displayValue(e)
     }
     
     console.log(audioObj)
@@ -82,7 +83,7 @@ class PadLine extends Component {
     let startNum = this.props.startNum
     let struc=[]
       for (let i = 0; i <= 2; i++) {      
-          struc[i]=<DrumPad keyVal={KitDetails[startNum+i].keyCode} URL={KitDetails[startNum+i].url} padName={KitDetails[startNum+i].name} />
+          struc[i]=<DrumPad keyVal={KitDetails[startNum+i].keyCode} URL={KitDetails[startNum+i].url} padName={KitDetails[startNum+i].name} displayValue={(val)=>this.props.displayValue(val)}/>
       }
       return struc
   }
@@ -100,15 +101,29 @@ class PadLine extends Component {
 class App extends Component {
 constructor(props) {
   super(props)
+  this.state ={
+    display:'hello'
+  }
+}
+
+displayValue= (val) => {
+  KitDetails.map((elem)=> {
+    if(elem.keyCode==val) {
+      this.setState({
+        display:elem.name
+      })
+    }
+  })
 }
 
   render() {
     return (
       <div className="App">
         <div className="container" id="drum-machine">
-          <PadLine startNum={0} />
-          <PadLine startNum={3} />
-          <PadLine startNum={6} />
+          <input className="display-box" value={this.state.display} readOnly />
+          <PadLine startNum={0} displayValue={(val)=> this.displayValue(val)}/>
+          <PadLine startNum={3} displayValue={(val) => this.displayValue(val)}/>
+          <PadLine startNum={6} displayValue={(val) => this.displayValue(val)}/>
         </div>
       </div>
     );
