@@ -1,12 +1,13 @@
 {
   "name": "drum-kit",
-  "homepage": "https://github.com/shivang02/drum-kit.git",
+  "homepage": "https://shivang02.github.io/drum-kit/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
