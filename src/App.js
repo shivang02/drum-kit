@@ -64,7 +64,7 @@ class DrumPad extends Component {
     let myKey = this.props.keyVal;
 
     return (
-      <button value= {myKey} className="push-box" onClick={(e) =>this.PlayAudio(e.target.value)}>
+      <button value= {myKey} className="drum-pad" onClick={(e) =>this.PlayAudio(e.target.value)}>
       {myKey}
         <audio className="clip" id={myKey} src={this.props.URL} />
       </button>

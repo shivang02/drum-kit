@@ -24,7 +24,7 @@
   text-align: center;
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  color: lightcyan;
+  color: rgb(66, 6, 51);
   text-shadow: 1px 1px lightsalmon;
 }
 
@@ -36,11 +36,17 @@
   width: 100%;
 }
 
-.push-box {
+.drum-pad {
   max-width: calc(100%/3);
   width: auto;
   height: auto;
+  font-size: 1.5rem;
+  color: rgb(255, 227, 227);
   padding: 2rem;
   background-color: rgb(54, 116, 105);
   margin: 1rem;
+}
+
+.drum-pad:hover {
+  background-color: rgb(42, 88, 80);
 }
